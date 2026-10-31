@@ -1,14 +1,14 @@
-# MCP para criação de cadernos de questões e simulados na plataforma Qconcursos
+# MCP para criação automática de cadernos de questões filtrados na plataforma Qconcursos
 
-O **Traki**, a corujinha robótica do [Track Concursos](https://trackconcursos.vercel.app/), conecta um assistente de IA ao catálogo oficial de filtros de questões do **Qconcursos** (Web e Mesa de Estudos **QC Elite**). Você informa o assunto ou até mesmo um edital inteiro que está estudando, e o assistente usa as ferramentas MCP para encontrar os filtros cirúrgicos correspondentes e entregar links prontos de questões filtradas por disciplina, assunto, banca, escolaridade e ano.
+O **Traki**, a corujinha robótica do [Track Concursos](https://trackconcursos.vercel.app/), conecta um assistente de IA ao catálogo oficial de filtros de questões do **Qconcursos**. Você informa o assunto ou até mesmo um edital inteiro que está estudando, e o assistente usa as ferramentas MCP para encontrar os filtros cirúrgicos correspondentes e entregar links prontos de questões filtradas por disciplina, assunto, banca, escolaridade e ano.
 
 <p align="center">
   <img src="assets/traki-apresentando-qconcursos.png" width="248" alt="Traki apresentando o Qconcursos">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/traki-qconcursos.png" width="198" alt="Super Traki com os superpoderes do Qconcursos">
+  <img src="assets/traki-qconcursos.png" width="198" alt="Super Traki com os poderes do Qconcursos">
 </p>
 
-<p align="center"><sub>Traki apresentando o Qconcursos e o Super Traki com os superpoderes do Qconcursos.</sub></p>
+<p align="center"><sub>Traki apresentando o Qconcursos e o Super Traki com os poderes do Qconcursos.</sub></p>
 
 <p align="center">
   <a href="https://claude.ai"><img src="https://img.shields.io/badge/Claude-MCP%20Ready-D97757?style=flat&logo=anthropic&logoColor=white&labelColor=111827" alt="Claude MCP Ready"></a>
@@ -22,7 +22,7 @@ O **Traki**, a corujinha robótica do [Track Concursos](https://trackconcursos.v
 
 ## 🎯 Para que serve
 
-Essa ferramenta MCP foi criada para ajudar quem estuda pelo **Track Concursos** ou por outras plataformas a criar cadernos de questões e simulados completos no **Qconcursos** com auxílio de uma IA.
+Essa ferramenta MCP foi criada para ajudar quem estuda pelo **Track Concursos** ou por outras plataformas a criar links de cadernos de questões no **Qconcursos** com auxílio de uma IA.
 
 Em vez de selecionar manualmente disciplina por disciplina, expandir dezenas de subtópicos na árvore do Qconcursos, configurar banca e escolaridade, o estudante apenas informa o tópico do edital (ou cola o conteúdo programático de uma disciplina/edital inteiro). O assistente de IA interpreta o pedido, aciona o Traki e entrega instantaneamente dois links oficiais prontos:
 1. **Qconcursos Web Tradicional (`www.qconcursos.com`)**
@@ -40,11 +40,11 @@ Cada uma das **208 disciplinas** e **11.645 etiquetas de assuntos** do Qconcurso
 
 ---
 
-## 🧠 Arquitetura Técnica Simplificada: A Revolução JEV e a Economia Ultimate de Tokens
+## 🧠 Arquitetura Técnica Simplificada: A Revolução JEV e a Economia de Tokens das ferramentas de IA
 
 Nos servidores MCP convencionais, o assistente de IA (como o Claude) precisa fazer várias chamadas seguidas (*ping-pong*): primeiro lista disciplinas, depois pesquisa palavras-chave, lê centenas de linhas de árvores de assuntos, tenta adivinhar IDs e por fim monta o link. Isso consome **de 15.000 a 40.000 tokens por pedido**, demora até 1 minuto e esgota rapidamente o limite diário da conta gratuita do Claude.
 
-Para resolver isso na raiz, este projeto foi arquitetado em parceria com o **Gemini 4 Argon (no Google Antigravity)** utilizando uma **Arquitetura Neuro-Simbólica de 3 Camadas (Sistema 2 + Sistema 0 + Sistema 1 com JEV)**:
+Para resolver isso na raiz, este projeto foi arquitetado utilizando uma **Arquitetura Neuro-Simbólica de 3 Camadas (Sistema 2 + Sistema 0 + Sistema 1 com JEV)**:
 
 ```text
 [1. Sistema 2: Claude (LLM)] 
@@ -117,9 +117,19 @@ Você pode utilizar esse MCP gratuitamente no **Claude.ai (Web)** ou no **Claude
 https://tocadotraki.vercel.app/mcp-qconcursos
 ```
 
-*(Ou diretamente pelo endpoint do servidor AWS: `https://18-221-134-140.sslip.io/qc/mcp`)*
-
 4. Em **Autenticação**, mantenha **None (Nenhuma)** e confirme!
+
+---
+
+## ⚠️ Aviso Importante sobre Disponibilidade e Infraestrutura Gratuita
+
+Este projeto é disponibilizado de forma **100% gratuita** para a comunidade de concurseiros e roda atualmente em servidores de camada gratuita (*Free Tier*) e cotas limitadas de API. Por esse motivo, tenha em mente que:
+
+- **Limitações de Tráfego e Latência:** Caso muitas pessoas estejam utilizando a ferramenta simultaneamente, o servidor pode aplicar limites temporários de requisições (*Rate Limit*) ou apresentar pequenos atrasos (*delays*) na resposta.
+- **Cotas do Motor JEV:** As chamadas de inteligência do JEV dependem de créditos de API. Caso os créditos do período se esgotem, o sistema poderá operar em modo de contingência ou ficar temporariamente indisponível.
+- **Disponibilidade do Serviço:** O servidor pode passar por manutenções ou ser retirado do ar a qualquer momento pelo mantenedor, sem aviso prévio.
+
+💡 **Como manter o Traki sempre voando alto?** Toda ajuda financeira da comunidade é revertida diretamente para custear servidores mais robustos e recarregar os créditos de API do motor JEV, garantindo estabilidade e velocidade para todos os estudantes!
 
 ---
 
